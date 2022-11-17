@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import {ethers} from 'ethers';
 import axios from 'axios';
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 const API_URL = 'http://localhost:4000' 
 
@@ -17,6 +18,11 @@ const ITEMS = [
 
 function Store({paymentProcessor, dai}) {
     const [url, seturl] = useState('');
+    const [cart, setCart] = useState([{
+        id:'',
+        price:'',
+    }])
+        
     const buy = async item => {
         const response1 = await axios.get(`${API_URL}/api/getPaymentId/${item.id}`);
         
@@ -47,16 +53,31 @@ function Store({paymentProcessor, dai}) {
         }
 
     }
+
+    const add = async item => {
+        setCart(ar => [
+            ...ar,
+            {
+                id:item.id,
+                price:item.price
+            }
+        ])
+        alert(`Item ${item.id} added successfully`);
+    }
     return(
     <ul className='list-group'>
         <li className='list-group-item'>
-            Buy item 1 - <span className='front-weight-bold'>100 DAI</span>
-            <button type='button' className='btn btn-primary float-right' onClick={() => buy(ITEMS[0])}>Buy</button>
+            Item 1 - <span className='font-weight-bold'>100 DAI</span>
+            <div className='text-right'>
+            <button type='button' className='btn btn-primary pull-right my-3' onClick={() => add(ITEMS[0])}>Add</button>
+            </div>
         </li>
 
         <li className='list-group-item'>
-            Buy item 2 - <span className='front-weight-bold'>200 DAI</span>
-            <button type='button' className='btn btn-primary float-right' onClick={() => buy(ITEMS[1])}>Buy</button>
+            Item 2 - <span className='font-weight-bold'>200 DAI</span>
+            <div className='text-right'>
+            <button type='button' className='btn btn-primary my-3' onClick={() => add(ITEMS[1])}>Add</button>
+            </div>
         </li>
     </ul>
     );

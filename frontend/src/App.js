@@ -11,7 +11,7 @@ function App() {
               <Navigationbar />
               <Routes>
                   <Route path='/' element={<Home/>}/>
-                  <Route path='/cart' component={<Cart/>}/>
+                  <Route path='/cart' element={<Cart/>}/>
                   
               </Routes>
           </Router>
