@@ -15,8 +15,8 @@ const getBlockchain = () =>
                     PaymentProcessor.abi,
                     signer
                 )
-                // console.log(paymentProcessor.address)
-                // console.log("yes");
+                console.log(paymentProcessor.address)
+                console.log("yes");
 
                 const dai = new Contract(
                     Dai.networks[5777].address,
