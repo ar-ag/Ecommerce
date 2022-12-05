@@ -78,43 +78,6 @@ function Navbar() {
     </ul>
   </div>
 </nav>
-    {/* <header className='header'>
-        <div className='logo'>
-            <Link to = '/'>Ecommerce</Link>
-        </div>
-        
-        
-            {
-                user ? (
-                    <>
-                        <div className='logo'>
-                            <Link to = '/cart'>Cart</Link>
-                        </div>
-                        <ul>
-                            <li>
-                                <button className='btn' onClick={onLogout}>
-                                    <FaSignOutAlt />Logout
-                                </button>
-                            </li>
-                        </ul>
-                    </>
-                ) : (
-                    <ul>
-                        <li>
-                            <Link to='/login'>
-                                <FaSignInAlt />Login
-                            </Link>
-                        </li>
-                        <li>
-                            <Link to='/register'>
-                                <FaUser />Register
-                            </Link>
-                        </li>
-                    </ul>
-                )
-            }
-        
-    </header> */}
     </>
   )
 }

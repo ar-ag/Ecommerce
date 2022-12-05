@@ -76,35 +76,6 @@ function StoreItem({item}) {
       }
   return (
     <>
-    {/* <div className="card mt-3 mx-2" style={cardStyle}>
-                  <div className="card-body">
-                    <div className="d-flex justify-content-between">
-                      <div className="d-flex flex-row align-items-center">
-                      <div>
-                          <img
-                            src={item.img}
-                            class="img-fluid rounded-3" alt="Shopping item" style={{width: '65px'}} />
-                        </div>
-                        <div className="ms-3">
-                          <h5>{item.name}</h5>
-                          <p className="small mb-0">{item.artist}</p>
-                        </div>
-                      </div>
-                      <div className="d-flex flex-row align-items-center">
-                        <div style={{width: '50px'}}>
-                          <h5 className="fw-normal mb-0"></h5>
-                        </div>
-                        <div style={{width: '80px'}}>
-                          <h5 className="mb-0">{item.price}</h5>
-                        </div>
-                        
-                        
-                        <button onClick={() => add(item)}>Add To Cart</button>
-                      </div>
-                    </div>
-                  </div>
-                </div> */}
-
 
         <div class="col mb-5">
             <div class="card h-100">

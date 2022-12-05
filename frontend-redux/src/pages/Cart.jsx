@@ -129,12 +129,6 @@ function Cart({paymentProcessor, dai}) {
   </div>
 </section>
 
-    {/* <div>
-      {items.map((item) => (
-        <p>{item.id}<span>{item.price}</span></p>
-      ))}
-      Cart
-    </div> */}
     </>
   )
 }
