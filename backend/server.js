@@ -13,7 +13,7 @@ const items = {
     '2':{id:2, url:'http://UrlToDownloadItem2'}
 }
 
-router.get('/api/getPaymentId/:itemId', async ctx => {
+router.get('/api/payment/getPaymentId/:itemId', async ctx => {
     const paymentId = (Math.random() * 10000).toFixed(0);
     await Payment.create({
         id: paymentId,
@@ -25,7 +25,7 @@ router.get('/api/getPaymentId/:itemId', async ctx => {
     };
 });
 
-router.get('/api/getItemUrl/:paymentId', async ctx => {
+router.get('/api/payment/getItemUrl/:paymentId', async ctx => {
     const payment = await Payment.findOne({id: ctx.params.paymentId})
 
     if(payment && payment.paid === true) {

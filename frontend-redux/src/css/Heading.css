@@ -1,0 +1,13 @@
+.heading {
+    background-image: url('https://cdn.shopify.com/s/files/1/0027/3229/4213/products/Great_Paintings_15x11_label_1024x1024.jpg?v=1623453934');
+      height: 800px;
+      margin:0px;
+      background-repeat: no-repeat;
+      background-size: cover;
+}
+
+.inner {
+    background-color: rgba(0, 0, 0, 0.6);
+    height: 800px;
+    margin:0px;
+}
