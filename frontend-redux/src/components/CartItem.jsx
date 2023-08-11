@@ -18,11 +18,12 @@ function CartItem({item, paymentProcessor, dai}) {
       const tx1 = await dai.approve(paymentProcessor.address, item.price);
       
       await tx1.wait();
+      console.log(tx1);
 
       const tx2 = await paymentProcessor.pay(item.price, response1.data.id);
       await tx2.wait();
       
-
+      console.log(tx2);
       await new Promise(resolve => setTimeout(resolve, 5000));
 
       const response2 = await axios.get(API_URL + `getItemUrl/${response1.data.id}`);

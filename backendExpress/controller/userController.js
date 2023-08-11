@@ -2,6 +2,8 @@ const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 const asyncHandler = require('express-async-handler');
 const User = require('../models/userModel')
+const dotenv = require('dotenv');
+dotenv.config();
 
 // @description:    Register new user
 // @route:          POST api/users
@@ -54,6 +56,7 @@ const registerUser = asyncHandler(async(req,res) => {
 const loginUser = asyncHandler( async(req,res) => {
     const {email, password} = req.body;
     console.log(req.body);
+    console.log(process.env.JWT_SECRET);
     if(!email || !password) {
         res.status(400);
         throw new Error('Please enter all fields') 
@@ -84,6 +87,7 @@ const getMe = asyncHandler( async(req,res) => {
 
 // generate JWT
 const generateToken = (id) => {
+    console.log(id);
     return jwt.sign({id}, process.env.JWT_SECRET, {
         expiresIn:'30d',
     })

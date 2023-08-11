@@ -29,7 +29,7 @@ const getBlockchain = () =>
             } 
             else {
             resolve({provider:undefined, paymentProcessor:undefined, dai:undefined})
-            
+             
             }
         })
     })
