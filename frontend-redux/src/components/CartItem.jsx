@@ -14,13 +14,16 @@ function CartItem({item, paymentProcessor, dai}) {
 
     async function buy() {
       const response1 = await axios.get(API_URL + `getPaymentId/${item.id}`);
-      console.log(response1);
+      console.log(paymentProcessor);
+      const resId = parseInt(response1.data.id);
+      console.log(typeof resId+" "+resId);
+      console.log(dai);
       const tx1 = await dai.approve(paymentProcessor.address, item.price);
-      
+      console.log(tx1);
       await tx1.wait();
       console.log(tx1);
-
-      const tx2 = await paymentProcessor.pay(item.price, response1.data.id);
+      
+      const tx2 = await paymentProcessor.pay(item.price, resId);
       await tx2.wait();
       
       console.log(tx2);

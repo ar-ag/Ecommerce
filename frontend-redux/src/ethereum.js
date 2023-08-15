@@ -18,7 +18,7 @@ const getBlockchain = () =>
                 console.log(paymentProcessor.address)
                 console.log("yes");
 
-                const dai = new Contract(
+                const dai = new ethers.Contract(
                     Dai.networks[5777].address,
                     Dai.abi,
                     signer
