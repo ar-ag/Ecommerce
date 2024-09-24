@@ -13,11 +13,11 @@ function App() {
 
   const [paymentProcessor, setPaymentProcessor] = useState(undefined);
   const [dai, setDai] = useState(undefined);
-
+  console.log("yesss");
   useEffect(() => {
     const init = async() => {
       const { paymentProcessor, dai } = await getBlockchain()  
-      
+      console.log('helll');
       
       setPaymentProcessor(paymentProcessor);
       

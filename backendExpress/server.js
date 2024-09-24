@@ -22,7 +22,7 @@ app.use(errorHandler)
 app.listen(5000, () => console.log(`server started at port 5000`))
 
 const listenToEvents = () => {
-    const provider = new ethers.providers.JsonRpcProvider('http://localhost:9545');
+    const provider = new ethers.JsonRpcProvider('http://localhost:9545');
     const networkId = '5777';
 
     const paymentProcessor = new ethers.Contract(
@@ -32,12 +32,13 @@ const listenToEvents = () => {
     );
 
     paymentProcessor.on('PaymentDone', async(payer, amount, paymentId, date) => {
-        console.log(`
-        from:${payer}
-        amount:${amount}
-        paymentId:${paymentId}
-        date:${(new Date(date.toNumber()*1000)).toLocaleString}
-        `);
+    //     console.log(`
+    //         from: ${payer}
+    //         amount: ${amount}
+    //         paymentId: ${paymentId}
+    //         date: ${(new Date(date * 1000)).toLocaleString()}
+    // `);
+    
 
         const payment = await Payment.findOne({id:paymentId});
         if(payment) {
